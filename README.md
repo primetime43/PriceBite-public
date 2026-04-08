@@ -1,5 +1,7 @@
 # PriceBite
 
+**[pricebite.org](https://pricebite.org/)**
+
 Compare fast-food menu prices across locations. PriceBite scrapes menu data from major restaurant chains and lets you see how prices differ by store, track changes over time, and find the cheapest option nearby.
 
 ## Supported Chains

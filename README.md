@@ -2,8 +2,6 @@
 
 Compare fast-food menu prices across locations. PriceBite scrapes menu data from major restaurant chains and lets you see how prices differ by store, track changes over time, and find the cheapest option nearby.
 
-![License](https://img.shields.io/github/license/primetime43/PriceBite-public)
-
 ## Supported Chains
 
 | Chain | Store Search | Menu Scraping | Notes |
@@ -28,20 +26,6 @@ Chains with bot protection that can't currently be supported: Subway (Cloudflare
 - **Background refresh** -- Scheduled batch jobs keep prices fresh for visited stores
 - **Admin dashboard** -- Monitor scraping jobs, manage data, view refresh schedules
 - **PWA support** -- Installable on mobile via "Add to Home Screen"
-
-## Architecture
-
-```
-Browser  -->  React SPA (Vite)  -->  FastAPI Backend  -->  PostgreSQL
-                                          |
-                                          +--> Redis (caching)
-                                          +--> Restaurant APIs (scraping)
-                                          +--> APScheduler (background jobs)
-```
-
-### Provider pattern
-
-Each restaurant chain is a self-contained **provider** module in `backend/app/providers/`. Providers implement two methods: `search_locations()` and `fetch_menu()`. Adding a new chain is as simple as creating a new file with the `@register_provider` decorator -- no other code changes needed.
 
 ### Price tracking
 
